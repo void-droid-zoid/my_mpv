@@ -20,3 +20,7 @@ SHIFT+KP5 script-message-to my_file_rating rate-file-shift 5
 ```
 
 then you can apply file ratings of from 0/0.5 up to 5 stars, which can be displayed, for example in dolphin file manager in the column 'rating'
+
+
+## tag_watched.lua
+Apply a tag "WATCHED" to every file played. Can be seen for example in the 'tags' column of dolphin file manager
