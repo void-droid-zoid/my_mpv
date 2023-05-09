@@ -29,6 +29,10 @@ function rate_file(rating)
         stars = stars .. '*'
     end
 
+    if rating == 0 then
+      stars = '-'
+    end
+
     mp.commandv("run", "setfattr", "-n", "user.baloo.rating", "-v", real_rating, final_path)
     mp.commandv("show-text", "Rated " .. stars, 1500)
 end
@@ -41,8 +45,9 @@ function rate_file_shift(rating)
     local path = mp.get_property("path")
     local file_path = mp.get_property_native("path")
     local final_path = utils.join_path(work_dir, file_path)
-    
-    local real_rating = rating * 2 + 1
+
+    local real_rating = rating * 2
+    real_rating = real_rating + 1
     local stars = ''
     for s=1,rating do
         stars = stars .. '*'
